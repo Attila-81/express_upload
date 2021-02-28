@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./public/script.js"></script>
+    <script src="./pub"></script>
     <title>Document</title>
   </head>
   <body>
@@ -15,7 +15,8 @@
       method="post"
       enctype="multipart/form-data"
     >
-      <input type="file" name="sampleFile" />
+      <input type="file" name="sampleFile" id="fileInput" />
+      <input type="text" name="name" id="username" />
       <input type="submit" value="Upload!" />
     </form>
   </body>
