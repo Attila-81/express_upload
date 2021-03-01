@@ -8,7 +8,7 @@ app.use("/form", express.static(__dirname + "/../frontend/index.html"));
 //Itt a /pub nem URL végződés, hanem megadja a hátul lévő fájl helyét, azaz az index.html-ben elég a /pub-bal hivatkozni a script.js helyére. Nem kell az egész elérési utat beírni az index.html-be, azaz el tudjuk rejteni a felhsználók elől a script.js valódi helyét.
 app.use("/pub", express.static(__dirname + "/../frontend/public/script.js"));
 
-app.use("/hello", express.static(__dirname + "/../frontend/hello.html"));
+//app.use("/hello", express.static(__dirname + "/../frontend/hello.html"));
 //app.use(express.static("/../frontend"));
 //app.use(express.static("public"));
 
@@ -30,7 +30,7 @@ app.post("/upload", function (req, res) {
 
   console.log("req.files >>>", req.files); // eslint-disable-line
 
-  sampleFile = req.files.sampleFile;
+  sampleFile = req.files.userfile;
 
   uploadPath = __dirname + "/uploads/" + sampleFile.name;
 

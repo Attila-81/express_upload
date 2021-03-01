@@ -7,16 +7,26 @@ function pageLoad() {
     console.log("We blocked the file upload process");
 
     let formData = new FormData();
-    const file = document.getElementById("fileInput");
+    const file = document.getElementById("userfile");
     const username = document.getElementById("username");
 
-    formData.append("file", file.value);
-    formData.append("name", username.value);
-    console.log(formData);
+    formData.append("userfile", file.files[0]);
+    formData.append("username", username.value);
 
-    for (let value of formData.values()) {
+    fetch("/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res)
+      .then((result) => {
+        console.log("Success:", result);
+      })
+      // .then((json) => console.log(json))
+      .catch((err) => console.error(err));
+
+    /* for (let value of formData.values()) {
       console.log(value);
-    }
+    } */
   });
 }
 
